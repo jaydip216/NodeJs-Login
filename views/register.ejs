@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <title>Hello, world!</title>
+  </head>
+  
+  <body>
+      <div id="login">
+          <h3 class="text-center text-white pt-5">Login form</h3>
+          <div class="container">
+              <div id="login-row" class="row justify-content-center align-items-center">
+                  <div id="login-column" class="col-md-6">
+                      <div id="login-box" class="col-md-12">
+                          <form id="login-form" class="form" action="/user/register" method="POST">
+                              <h3 class="text-center text-info">Registration</h3>
+
+                              <% if(typeof errors != 'undefined'){ %> 
+                                <% errors.forEach(function(error) { %>
+                                    <div class="alert alert-warning" role="alert">
+                                        <%= error.msg %>
+                                      </div>
+                                <% }); %>
+                                <% } %>
+
+                              <div class="form-group">
+                                <label for="name" class="text-info">Name:</label><br>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" 
+                                        value="<%= typeof name != 'undefined' ? name : '' %>">
+                              </div>
+                              <div class="form-group">
+                                  <label for="Email" class="text-info">Email:</label><br>
+                                  <input type="email" name="email" id="email" class="form-control" placeholder="Enter Enail"
+                                  value="<%= typeof email != 'undefined' ? email : '' %>">
+                              </div>
+                              <div class="form-group">
+                                  <label for="password" class="text-info">Password:</label><br>
+                                  <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password">
+                              </div>
+                              <div class="form-group">
+                                  <input type="submit" name="submit" class="btn btn-info btn-md" value="Register">
+                              </div>
+                              <div id="register-link" class="text-right">
+                                  Already have an account?
+                                <a href="/user/login" class="text-info">Login</a>
+                            </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <% if(typeof name == 'undefined'){ %> 
+    <h2>You can't access  Dashboard without login.</h2>
+    <a href="/user/login">Login</a>
+    <% } else { %>
+      <h1>Welcome <%=name%></h1>
+      <h2>Back to <a href="/user/login">Login</a> </h2>
+    <% } %>
+  </body>
+  </html>
